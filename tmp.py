@@ -1,6 +1,8 @@
 import requests
 from bs4 import BeautifulSoup
 from langchain.document_transformers import Html2TextTransformer
+from langchain.document_loaders import AsyncHtmlLoader
+from langchain.document_transformers import BeautifulSoupTransformer
 #import HTML2Text
 
 
@@ -18,11 +20,11 @@ def get_reviews_url(soup):
     return test[-1]['href']
 
 
-def main():
+def get_all_pages(num_pages):
     # Goto the product page and get the HTML content of the page
     url = f'{base}/{product}'
     main_page = requests.get(url, headers=header)
-    bs_transformer = Html2TextTransformer()
+    # bs_transformer = Html2TextTransformer()
     print("initial page status code: ", main_page.status_code)
 
     # with open('spar.html', 'w', encoding="utf-8") as f:
@@ -32,31 +34,35 @@ def main():
     # Get the product reviews page url and get the HTML content of the page
     tmp = get_reviews_url(soup)
     review_pages = []
-    for i in range(0, 2):
+    review_pages.append(url)
+    for i in range(0, num_pages):
         prod_reviews_url = f'{base}{tmp}&page={i+1}'
-        prod_reviews_page = requests.get(prod_reviews_url, headers=header)
+        # prod_reviews_page = requests.get(prod_reviews_url, headers=header)
         # Print the status code of the page
-        tmp = prod_reviews_page.content
-        tmp = bs_transformer.transform_documents(tmp)
-        review_pages.append(tmp)
+        # tmp = prod_reviews_page.content
+        # tmp = bs_transformer.transform_documents(tmp)
+        review_pages.append(prod_reviews_url)
+    
+    return review_pages
     
     for i in range(0, 2):
         with open(f'page{i+1}.txt', 'w', encoding="utf-8") as f:
             f.write(review_pages[i].page_content)
+    
+    return review_pages
+
+def main():
+    links = get_all_pages(2)
+    loader = AsyncHtmlLoader(links, header)
+    docs = loader.load()
+    print('loaded')
+    html2text = Html2TextTransformer()
+    # soup_transformer = BeautifulSoupTransformer()
+    docs = html2text.transform_documents(docs)
+    for i in range(0, len(links)):
+        with open(f'page{i+1}.txt', 'w', encoding="utf-8") as f:
+            f.write(docs[i].page_content)
+    print('done')
+    return
 
 main()
-exit(0)
-
-links = soup.find_all('a', href=lambda value: value and 'product-reviews' in value)
-print(links)
-with open('test.txt', 'w', encoding="utf-8") as f:
-    f.write(str(links[0]['href']))
-# Go to the product reviews page and get the HTML content of the page, you need to remove the charachters after the 2nd / in the url
-tmp = url.split('/', 3)[2]
-print(tmp)
-
-# reviews_page = requests.get(links[0]['href'].split('/', 3)[2], headers=header)
-# print(reviews_page.status_code)
-# print(reviews_page.url)
-# with open('sparx.html', 'w', encoding="utf-8") as f:
-#     f.write(reviews_page.text)
