@@ -15,8 +15,9 @@ header = {
             'Accept-Language': 'en-US,en;q=0.9'
         }
 
-product = 'apple-iphone-13-pink-128-gb/p/itm6e30c6ee045d2'
+# product = 'apple-iphone-13-pink-128-gb/p/itm6e30c6ee045d2'
 # product = 'apple-iphone-14-plus-blue-128-gb/p/itmac8385391b02b'
+product = 'moonza-waterproof-55pcs-pokemon-tcg-gold-card-box-v-series-vmax-gx-playing/p/itma95c67b28adfb'
 
 product_details = {}
 reviews = []
@@ -80,16 +81,23 @@ def get_all_pages(num_pages):
     #     product_details['specifications'].append(li.text.strip())
 
     tmp = soup.find('div',string='Specifications').find_next_sibling().findChild()
-    # print(tmp)
+    print(tmp.prettify())
     i = 0
     for cli in tmp:
         li = cli
         curname = li.find('div').text.strip()
+        # print(cli.prettify())
         #locate the table
+        i = 0
         table = li.find('table')
         table_dict = {}
         for tr in table.find_all('tr'):
-            table_dict[tr.find('td').text.strip()] = tr.find('td').find_next_sibling().text.strip()
+            i += 1
+            try:
+                table_dict[tr.find('td').text.strip()] = tr.find('td').find_next_sibling().text.strip()
+            except:
+                table_dict[curname] = tr.find('td').text.strip()
+                pass
         product_details['specifications'][curname] = table_dict
         # break
     # print(product_details['specifications'])
@@ -106,6 +114,16 @@ def get_review_pages(links):
         rev_page = rev_page[1:-1]
         reviews.append(rev_page)
     return
+
+def get_reviews(link):
+    rev_page = []
+    page = requests.get(link, headers=header)
+    soup = BeautifulSoup(page.content, 'lxml')
+    for li in soup.find_all('div'):
+        if li.has_attr('class') and len(li['class']) == 0:
+            rev_page.append(li.text.strip())
+    rev_page = rev_page[1:-1]
+    return rev_page
 
 def main():
     links = get_all_pages(4)[1:]
