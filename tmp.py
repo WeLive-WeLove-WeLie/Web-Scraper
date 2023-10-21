@@ -67,8 +67,8 @@ def get_all_pages(num_pages):
             continue
         product_details['product_description'].append(li.text.strip())
     product_details['product_description'] = product_details['product_description'][:-13]
-    product_details['highlights'] = product_details['product_description'][2:]
-    product_details['product_description'] = product_details['product_description'][1]
+    # product_details['highlights'] = product_details['product_description'][2:]
+    product_details['description'] = product_details['product_description'][1]
     return review_pages
 
 def get_review_pages(links):
@@ -107,6 +107,7 @@ def main():
     with open('./product/product_details.json', 'w') as f:
         json.dump(product_details, f, indent=4,sort_keys=True)
     print('done')
+    #Close the loader
     return
 
 main()

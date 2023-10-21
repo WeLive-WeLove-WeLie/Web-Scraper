@@ -82,7 +82,7 @@ Certified Buyer, Cuttack
 
 Oct, 2022
 
-1471
+1472
 
 163
 
@@ -150,7 +150,7 @@ Certified Buyer, Deuli
 
 Jun, 2022
 
-393
+394
 
 37
 
@@ -196,7 +196,7 @@ Certified Buyer, Hyderabad
 
 Oct, 2022
 
-237
+238
 
 20
 
@@ -275,7 +275,7 @@ Certified Buyer, Visakhapatnam
 
 8 months ago
 
-356
+357
 
 34
 
