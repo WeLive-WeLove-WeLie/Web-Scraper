@@ -7,7 +7,7 @@ import json
 
 #import HTML2Text
 
-
+#https://www.flipkart.com/purshottam-wala-women-printed-ethnic-dress-kurta/p/itm1ebc238e2a5a4
 base = 'https://www.flipkart.com'
 
 header = {
@@ -17,7 +17,7 @@ header = {
 
 # product = 'apple-iphone-13-pink-128-gb/p/itm6e30c6ee045d2'
 # product = 'apple-iphone-14-plus-blue-128-gb/p/itmac8385391b02b'
-product = 'moonza-waterproof-55pcs-pokemon-tcg-gold-card-box-v-series-vmax-gx-playing/p/itma95c67b28adfb'
+product = 'titirangi-4-pack-4wd-monster-truck-cars-push-go-toy-trucks-friction-powered-cars-wheel-drive-vehicles-toddlers-children-boys-girls-kids-gift-4pcs/p/itm5e18b7c4f5a77'
 
 product_details = {}
 reviews = []
@@ -51,54 +51,60 @@ def get_all_pages(num_pages):
     for script in soup.find_all('script', attrs={'id': 'jsonLD'}):
         json_data  = json.loads(script.text)
         # print(json_data)
-        product_details['rating'] = json_data[0]['aggregateRating']['ratingValue']
-        product_details['review_count'] = json_data[0]['aggregateRating']['reviewCount']
-        product_details['brand'] = json_data[0]['brand']['name']
-        product_details['name'] = json_data[0]['name']
-        product_details['image'] = json_data[0]['image']
-        product_details['price'] = json_data[0]['offers']['price']
+        product_details['rating'] = json_data[0].get('aggregateRating', {}).get('ratingValue', 0)
+        product_details['review_count'] = json_data[0].get('aggregateRating', {}).get('reviewCount', 0)
+        product_details['brand'] = json_data[0].get('brand', {}).get('name', 0)
+        product_details['name'] = json_data[0].get('name', 0)
+        product_details['image'] = json_data[0].get('image', 0)
+        product_details['price'] = json_data[0].get('offers', {}).get('price', 0)
         break
-    for li in soup.find_all('p'):
-        # Check for any class, if any reject it
-        if li.has_attr('class'):
-            continue
-        product_details['product_description'].append(li.text.strip())
-    product_details['description'] = product_details['product_description'][1]
-    product_details['product_description'] = product_details['product_description'][2:-13]
+    
+    try:
+        for li in soup.find_all('p'):
+            # Check for any class, if any reject it
+            if li.has_attr('class'):
+                continue
+            product_details['product_description'].append(li.text.strip())
+        product_details['description'] = product_details['product_description'][1]
+        product_details['product_description'] = product_details['product_description'][2:-13]
+    except:
+        pass
 
-
-    #Locate the text with highlights
-    line_n_div = ""
-    tmp = soup.find('div',string='Highlights').find_next_sibling()
-    # for each text in the highlights, add it to the list
-    for li in tmp.find_all('li'):
-        product_details['highlights'].append(li.text.strip())
+    try:
+        tmp = soup.find('div',string='Highlights').find_next_sibling()
+        # for each text in the highlights, add it to the list
+        for li in tmp.find_all('li'):
+            product_details['highlights'].append(li.text.strip())
+    except:
+        pass
     # print(product_details['highlights'])
 
     #Add specifications
     product_details['specifications'] = {}
     # for li in tmp.find_all('li'):
     #     product_details['specifications'].append(li.text.strip())
-
-    tmp = soup.find('div',string='Specifications').find_next_sibling().findChild()
-    print(tmp.prettify())
-    i = 0
-    for cli in tmp:
-        li = cli
-        curname = li.find('div').text.strip()
-        # print(cli.prettify())
-        #locate the table
+    try:
+        tmp = soup.find('div',string='Specifications').find_next_sibling().findChild()
+        # print(tmp.prettify())
         i = 0
-        table = li.find('table')
-        table_dict = {}
-        for tr in table.find_all('tr'):
-            i += 1
-            try:
-                table_dict[tr.find('td').text.strip()] = tr.find('td').find_next_sibling().text.strip()
-            except:
-                table_dict[curname] = tr.find('td').text.strip()
-                pass
-        product_details['specifications'][curname] = table_dict
+        for cli in tmp:
+            li = cli
+            curname = li.find('div').text.strip()
+            # print(cli.prettify())
+            #locate the table
+            i = 0
+            table = li.find('table')
+            table_dict = {}
+            for tr in table.find_all('tr'):
+                i += 1
+                try:
+                    table_dict[tr.find('td').text.strip()] = tr.find('td').find_next_sibling().text.strip()
+                except:
+                    table_dict[curname] = tr.find('td').text.strip()
+                    pass
+            product_details['specifications'][curname] = table_dict
+    except:
+        pass
         # break
     # print(product_details['specifications'])
     return review_pages
