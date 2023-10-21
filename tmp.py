@@ -15,8 +15,8 @@ header = {
             'Accept-Language': 'en-US,en;q=0.9'
         }
 
-product = 'apple-iphone-13-pink-128-gb/p/itm6e30c6ee045d2'
-# product = 'apple-iphone-14-plus-blue-128-gb/p/itmac8385391b02b'
+# product = 'apple-iphone-13-pink-128-gb/p/itm6e30c6ee045d2'
+product = 'apple-iphone-14-plus-blue-128-gb/p/itmac8385391b02b'
 
 product_details = {}
 reviews = []
@@ -43,10 +43,6 @@ def get_all_pages(num_pages):
     review_pages.append(url)
     for i in range(0, num_pages):
         prod_reviews_url = f'{base}{tmp}&page={i+1}'
-        # prod_reviews_page = requests.get(prod_reviews_url, headers=header)
-        # Print the status code of the page
-        # tmp = prod_reviews_page.content
-        # tmp = bs_transformer.transform_documents(tmp)
         review_pages.append(prod_reviews_url)
 
     product_details['highlights'] = []
@@ -66,9 +62,19 @@ def get_all_pages(num_pages):
         if li.has_attr('class'):
             continue
         product_details['product_description'].append(li.text.strip())
-    product_details['product_description'] = product_details['product_description'][:-13]
-    # product_details['highlights'] = product_details['product_description'][2:]
     product_details['description'] = product_details['product_description'][1]
+    product_details['product_description'] = product_details['product_description'][2:-13]
+
+
+    #Locate the text with highlights
+    line_n_div = ""
+    tmp = soup.find('div',string='Highlights').find_next_sibling()
+    # for each text in the highlights, add it to the list
+    for li in tmp.find_all('li'):
+        product_details['highlights'].append(li.text.strip())
+    # print(product_details['highlights'])
+
+        
     return review_pages
 
 def get_review_pages(links):
@@ -101,8 +107,8 @@ def main():
     for i in range(0, len(links)):
         with open(f'./product/langchain_rev/page{i+1}.txt', 'w', encoding="utf-8") as f:
             f.write(docs[i].page_content)
-            if(i == 0):
-                print(docs[i].dict())
+            # if(i == 0):
+                # print(docs[i].dict())
     # print(product_details)
     with open('./product/product_details.json', 'w') as f:
         json.dump(product_details, f, indent=4,sort_keys=True)
