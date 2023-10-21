@@ -15,8 +15,8 @@ header = {
             'Accept-Language': 'en-US,en;q=0.9'
         }
 
-# product = 'apple-iphone-13-pink-128-gb/p/itm6e30c6ee045d2'
-product = 'apple-iphone-14-plus-blue-128-gb/p/itmac8385391b02b'
+product = 'apple-iphone-13-pink-128-gb/p/itm6e30c6ee045d2'
+# product = 'apple-iphone-14-plus-blue-128-gb/p/itmac8385391b02b'
 
 product_details = {}
 reviews = []
@@ -74,7 +74,25 @@ def get_all_pages(num_pages):
         product_details['highlights'].append(li.text.strip())
     # print(product_details['highlights'])
 
-        
+    #Add specifications
+    product_details['specifications'] = {}
+    # for li in tmp.find_all('li'):
+    #     product_details['specifications'].append(li.text.strip())
+
+    tmp = soup.find('div',string='Specifications').find_next_sibling().findChild()
+    # print(tmp)
+    i = 0
+    for cli in tmp:
+        li = cli
+        curname = li.find('div').text.strip()
+        #locate the table
+        table = li.find('table')
+        table_dict = {}
+        for tr in table.find_all('tr'):
+            table_dict[tr.find('td').text.strip()] = tr.find('td').find_next_sibling().text.strip()
+        product_details['specifications'][curname] = table_dict
+        # break
+    # print(product_details['specifications'])
     return review_pages
 
 def get_review_pages(links):
@@ -92,6 +110,7 @@ def get_review_pages(links):
 def main():
     links = get_all_pages(4)[1:]
     get_review_pages(links)
+    # return
     loader = AsyncHtmlLoader(links, header)
     docs = loader.load()
     print('loaded')
