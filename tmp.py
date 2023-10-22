@@ -16,8 +16,9 @@ header = {
         }
 
 # product = 'apple-iphone-13-pink-128-gb/p/itm6e30c6ee045d2'
-product = 'apple-iphone-14-plus-blue-128-gb/p/itmac8385391b02b'
+# product = 'apple-iphone-14-plus-blue-128-gb/p/itmac8385391b02b'
 # product = 'parry-s-white-label-sulphur-free-process-sugar/p/itma70eb903699cf'
+product = 'zebronics-zeb-km-2100-wired-usb-desktop-keyboard/p/itme4d7408f2405e'
 
 product_details = {}
 reviews = []
@@ -29,7 +30,7 @@ def get_reviews_url(soup):
 def sellerscrape(soup, product_details):
     tmp = soup.find('div',string='Seller').find_next_sibling()
     cur_dict = {}
-    # print(tmp.prettify())
+    print(tmp.prettify())
     cur_seller = tmp.find('div', id='sellerName').findChild()
     cur_dict['seller_name'] = cur_seller.findChild().text.strip()
     cur_dict['seller_rating'] = cur_seller.findChild().find_next_sibling().text.strip()
@@ -39,9 +40,26 @@ def sellerscrape(soup, product_details):
         # print(innerpoints.prettify())
         # print(innerpoints.text.strip())
         otherinfo.append(innerpoints.text.strip())
+    otherinfo = otherinfo[:-1]
     cur_dict['other_info'] = otherinfo
     print(cur_dict)
     product_details['seller'] = cur_dict
+
+def capacityscrape(soup, product_details):
+    tmp = soup.find('div',string='Capacity').find_next_sibling()
+    cur_dict = {}
+    print(tmp.prettify())
+    # cur_dict['seller_name'] = cur_seller.findChild().text.strip()
+    # cur_dict['seller_rating'] = cur_seller.findChild().find_next_sibling().text.strip()
+    # otherinfo = []
+    # for li in tmp.find_all('li'):
+    #     innerpoints = li.findChild()
+    #     # print(innerpoints.prettify())
+    #     # print(innerpoints.text.strip())
+    #     otherinfo.append(innerpoints.text.strip())
+    # cur_dict['other_info'] = otherinfo
+    # print(cur_dict)
+    # product_details['seller'] = cur_dict
 
 def get_all_pages(num_pages):
     # Goto the product page and get the HTML content of the page
@@ -124,6 +142,10 @@ def get_all_pages(num_pages):
 
     try:
         sellerscrape(soup, product_details)
+    except:
+        pass
+    try:
+        capacityscrape(soup, product_details)
     except:
         pass
         # break
