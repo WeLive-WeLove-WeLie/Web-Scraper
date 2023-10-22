@@ -61,6 +61,23 @@ def capacityscrape(soup, product_details):
     # print(cur_dict)
     # product_details['seller'] = cur_dict
 
+def colorscrape(soup, product_details):
+    #find the branch which has span id Color and extract the colors
+    tmp = soup.find('span', id='Color').find_parent()
+    colors = []
+    for li in tmp.find_all('li'):
+        colors.append(li.text.strip())
+    # print(colors)
+    product_details['colors'] = colors
+
+def storagescrape(soup, product_details):
+    tmp = soup.find('span', id='Storage').find_parent()
+    storage = []
+    #get the text from this branch where class is _3Oikkn _3_ezix _2KarXJ
+    for li in tmp.find_all('li'):
+        storage.append(li.text.strip())
+    product_details['storage'] = storage
+
 def get_all_pages(num_pages):
     # Goto the product page and get the HTML content of the page
     url = f'{base}/{product}'
