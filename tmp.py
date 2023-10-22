@@ -16,8 +16,8 @@ header = {
         }
 
 # product = 'apple-iphone-13-pink-128-gb/p/itm6e30c6ee045d2'
-# product = 'apple-iphone-14-plus-blue-128-gb/p/itmac8385391b02b'
-product = 'titirangi-4-pack-4wd-monster-truck-cars-push-go-toy-trucks-friction-powered-cars-wheel-drive-vehicles-toddlers-children-boys-girls-kids-gift-4pcs/p/itm5e18b7c4f5a77'
+product = 'apple-iphone-14-plus-blue-128-gb/p/itmac8385391b02b'
+# product = 'parry-s-white-label-sulphur-free-process-sugar/p/itma70eb903699cf'
 
 product_details = {}
 reviews = []
@@ -26,6 +26,22 @@ def get_reviews_url(soup):
     test = soup.find_all('a', href=lambda value: value and 'product-reviews' in value)
     return test[-1]['href']
 
+def sellerscrape(soup, product_details):
+    tmp = soup.find('div',string='Seller').find_next_sibling()
+    cur_dict = {}
+    # print(tmp.prettify())
+    cur_seller = tmp.find('div', id='sellerName').findChild()
+    cur_dict['seller_name'] = cur_seller.findChild().text.strip()
+    cur_dict['seller_rating'] = cur_seller.findChild().find_next_sibling().text.strip()
+    otherinfo = []
+    for li in tmp.find_all('li'):
+        innerpoints = li.findChild()
+        # print(innerpoints.prettify())
+        # print(innerpoints.text.strip())
+        otherinfo.append(innerpoints.text.strip())
+    cur_dict['other_info'] = otherinfo
+    print(cur_dict)
+    product_details['seller'] = cur_dict
 
 def get_all_pages(num_pages):
     # Goto the product page and get the HTML content of the page
@@ -105,6 +121,11 @@ def get_all_pages(num_pages):
             product_details['specifications'][curname] = table_dict
     except:
         pass
+
+    try:
+        sellerscrape(soup, product_details)
+    except:
+        pass
         # break
     # print(product_details['specifications'])
     return review_pages
@@ -133,29 +154,31 @@ def get_reviews(link):
 
 def main():
     links = get_all_pages(4)[1:]
-    get_review_pages(links)
+    with open('./product/product_details.json', 'w') as f:
+        json.dump(product_details, f, indent=4,sort_keys=True)
+    print('done')
+    return
+    # get_review_pages(links)
     # return
-    loader = AsyncHtmlLoader(links, header)
-    docs = loader.load()
+    # loader = AsyncHtmlLoader(links, header)
+    # docs = loader.load()
     print('loaded')
-    html2text = Html2TextTransformer()
+    # html2text = Html2TextTransformer()
     # soup_transformer = BeautifulSoupTransformer()
     
-    docs = html2text.transform_documents(docs)
+    # docs = html2text.transform_documents(docs)
     for i in range(0, len(links)):
         with open(f'./product/reviews/page{i+1}.txt', 'w', encoding="utf-8") as f:
             for line in reviews[i]:
                 f.write(line)
                 f.write('\n')
-    for i in range(0, len(links)):
-        with open(f'./product/langchain_rev/page{i+1}.txt', 'w', encoding="utf-8") as f:
-            f.write(docs[i].page_content)
+    # for i in range(0, len(links)):
+    #     with open(f'./product/langchain_rev/page{i+1}.txt', 'w', encoding="utf-8") as f:
+    #         f.write(docs[i].page_content)
             # if(i == 0):
                 # print(docs[i].dict())
     # print(product_details)
-    with open('./product/product_details.json', 'w') as f:
-        json.dump(product_details, f, indent=4,sort_keys=True)
-    print('done')
+   
     #Close the loader
     return
 

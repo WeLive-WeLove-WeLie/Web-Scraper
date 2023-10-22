@@ -1,38 +1,125 @@
 {
-    "brand": "TITIRANGI",
-    "description": "Flipkart Internet Private Limited,",
+    "brand": "APPLE",
+    "description": "Stay productive and improve your performance with the Super Retina XDR display that is comfortable for the eyes. Powered with a 12 MP main camera, enjoy taking pictures with friends and family. With a built-in rechargeable lithium-ion battery and equipped with the MagSafe wireless charging, you can charge your phone quickly up to 50 % in just half an hour by using a 20 W adapter. This phone is loaded with a horde of exciting features such as Siri, face ID, barometer, ambient light sensors etc., and is also resistant to dust and water as it is IP68 rated.",
     "highlights": [
-        "Material: Plastic",
-        "Non-battery Operated",
-        "Non-rechargeable Batteries",
-        "Width x Height: 9 cm x 7.5 cm",
-        "Age: 3+ Years"
+        "128 GB ROM",
+        "17.02 cm (6.7 inch) Super Retina XDR Display",
+        "12MP + 12MP | 12MP Front Camera",
+        "A15 Bionic Chip, 6 Core Processor Processor"
     ],
-    "image": "http://rukmini1.flixcart.com/image/128/128/khuvxjk0-0/vehicle-pull-along/x/w/y/friction-powered-mini-monster-cars-for-kids-with-big-rubber-original-imafxruqgz7rw4xw.jpeg?q=70",
-    "name": "TITIRANGI 4 Pack 4WD Monster Truck Cars,Push and Go Toy Trucks Friction Powered Cars 4 Wheel Drive Vehicles for Toddlers Children Boys Girls Kids Gift-4PCS",
-    "price": 212,
-    "product_description": [],
-    "rating": 4.2,
-    "review_count": 3757,
+    "image": "http://rukmini1.flixcart.com/image/128/128/xif0q/mobile/c/4/d/-original-imaghx9qygjjg8hz.jpeg?q=70",
+    "name": "APPLE iPhone 14 Plus (Blue, 128 GB)",
+    "price": 64999,
+    "product_description": [
+        "The iPhone 14 Plus display has rounded corners that follow a beautiful curved design, and these corners are within a standard rectangle. When measured as a standard rectangular shape, the screen is 16.95 centimetres (6.68) diagonally.",
+        "Equipped with a 12 MP Main camera and an ultra wide camera, you can click beautiful pictures on this phone\u2019s dual camera system. You can also capture your wild memories on the Portrait mode with Focus and Depth Control to create a memorable memory.",
+        "Powered by a MagSafe wireless charging up to 15 W and Qi wireless charging up to 7.5 W, this phone has a built-in rechargeable lithium-ion battery. With a fast-charge capability where you can boost up your battery up to 50% charge in around 30 minutes with a 20 W adapter or higher (available separately). You can have up to 26 hours of video playback time, up to 20 hours of streaming, and up to 100 hours of audio playback time.",
+        "Use your voice to send messages, set reminders and more. You can activate hands\u2011free with only your voice using \u201cHey Siri\u201d. You can also use your voice to run shortcuts from your favourite apps.",
+        "Explore a range of sensors such as Face ID, barometer, High dynamic range gyro, High-g accelerometer, Proximity sensor and dual ambient light sensors.",
+        "Built-in accessibility features supporting vision, mobility, hearing and cognitive disabilities help you get the most out of your iPhone.",
+        "This iPhone is IP68 rated (maximum depth of 6 metres up to 30 minutes).",
+        "Flipkart Internet Private Limited,"
+    ],
+    "rating": 4.6,
+    "review_count": 2149,
+    "seller": {
+        "other_info": [
+            "7 Days Service Center Replacement/Repair?",
+            "See other sellers"
+        ],
+        "seller_name": "TrueComRetail",
+        "seller_rating": "4.8"
+    },
     "specifications": {
+        "Battery & Power Features": {
+            "Battery Capacity": "4323 mAh"
+        },
+        "Call Features": {
+            "Speaker Phone": "Yes",
+            "Video Call Support": "Yes"
+        },
+        "Camera Features": {
+            "Digital Zoom": "5X",
+            "Dual Camera Lens": "Primary Camera",
+            "Flash": "Rear: LED True Tone Flash | Front: Retina Flash",
+            "Frame Rate": "240 fps, 120 fps, 60 fps, 30 fps, 25 fps, 24 fps",
+            "Full HD Recording": "Yes",
+            "HD Recording": "Yes",
+            "Optical Zoom": "Yes",
+            "Primary Camera": "12MP + 12MP",
+            "Primary Camera Available": "Yes",
+            "Primary Camera Features": "Dual Camera Setup: 12MP Main Camera (Focal Length: 26 mm, f/1.5 Aperture, Sensor Shift Optical Image Stabilisation, Seven Element Lens, 100% Focus Pixels) + 12MP Ultra Wide Camera (Focal Length: 13 mm, f/2.4 Aperture and FOV: 120 Degree, Five Element Lens), 2X Optical Zoom Out, Digital Zoom Upto 5X, Sapphire Crystal Lens Cover, True Tone Flash, Camera Feature: Photonic Engine, Deep Fusion, Smart HDR 4, Portrait Mode with Advanced Bokeh and Depth Control, Portrait Lighting with Six Effects (Natural, Studio, Contour, Stage, Stage Mono, High Key Mono), Night Mode, Panorama (up to 63MP), Photographic Styles, Wide Colour Capture for Photos and Live Photos, Lens Correction (Ultra Wide), Advanced Red Eye Correction, Auto Image Stabilisation, Burst Mode, Photo Geotagging, Image Formats Captured: HEIF and JPEG",
+            "Secondary Camera": "12MP Front Camera",
+            "Secondary Camera Available": "Yes",
+            "Secondary Camera Features": "12MP Camera Setup: (f/1.9 Aperture), Camera Feature: Autofocus with Focus Pixels, Six Element Lens, Retina Flash, Photonic Engine, Deep Fusion, Smart HDR 4, Portrait Mode with Advanced Bokeh and Depth Control, Portrait Lighting with Six Effects (Natural, Studio, Contour, Stage, Stage Mono, High Key Mono), Animoji and Memoji, Night Mode, Photographic Styles, Apple ProRAW, Wide Colour Capture for Photos and Live Photos, Lens Correction, Auto Image Stabilisation, Burst Mode, Video Feature: Timelapse Video with Stabilisation, Night Mode Timelapse, QuickTake Video, Cinematic Video Stabilisation (4K, 1080p and 720p)",
+            "Video Recording": "Yes",
+            "Video Recording Resolution": "Rear Camera: 4K (at 24 fps/ 25 fps/ 30 fps/ 60 fps), 1080P (at 120 fps/60 fps/30 fps/ 25 fps), 720P (at 30 fps) | Front Camera: 4K (at 24 fps/ 25 fps/ 30 fps/ 60 fps), 1080P (at 120 fps/60 fps/30 fps/ 25 fps)"
+        },
+        "Connectivity Features": {
+            "Bluetooth Support": "Yes",
+            "Bluetooth Version": "v5.3",
+            "GPS Support": "Yes",
+            "Internet Connectivity": "5G, 4G, 3G, Wi-Fi, EDGE",
+            "Map Support": "Google Maps",
+            "NFC": "Yes",
+            "Network Type": "5G, 4G VOLTE, 4G, 3G, 2G",
+            "Supported Networks": "5G, 4G VoLTE, 4G LTE, UMTS, GSM",
+            "Wi-Fi": "Yes"
+        },
+        "Dimensions": {
+            "Depth": "7.8 mm",
+            "Height": "160.8 mm",
+            "Weight": "203 g",
+            "Width": "78.1 mm"
+        },
+        "Display Features": {
+            "Display Size": "17.02 cm (6.7 inch)",
+            "Display Type": "Super Retina XDR Display",
+            "GPU": "5 Core",
+            "Other Display Features": "HDR Display, True Tone, Wide Colour (P3), Haptic Touch, Contrast Ratio: 20,00,000:1, Max Brightness: 800 nits, Peak Brightness: 1,200 nits, Fingerprint Resistant Oleophobic Coating, Support for Display of Multiple Languages and Characters Simultaneously",
+            "Resolution": "2778 x 1284 Pixels",
+            "Resolution Type": "Super Retina XDR Display"
+        },
         "General": {
-            "Assembly Required": "No",
-            "Character": "Monster Truck Cars",
-            "Material": "Plastic",
-            "Minimum Age": "3 years",
-            "Rechargeable": "No",
-            "Type": "Remote Control Monster Truck & Rock Crawlers"
+            "Browse Type": "Smartphones",
+            "Color": "Blue",
+            "Hybrid Sim Slot": "No",
+            "In The Box": "Handset, USB-C to Lightning Cable, Documentation",
+            "Model Name": "iPhone 14 Plus",
+            "Model Number": "MQ523HN/A",
+            "OTG Compatible": "No",
+            "SIM Type": "Dual Sim(Nano + eSIM)",
+            "Sound Enhancements": "Built-in Stereo Speaker",
+            "Touchscreen": "Yes"
         },
-        "In The Box": {
-            "In The Box": "1 box"
+        "Memory & Storage Features": {
+            "Internal Storage": "128 GB"
         },
-        "Power Features": {
-            "Battery Type for Toy": "3 x No batteries Batteries"
+        "Multimedia Features": {
+            "Audio Formats": "AAC, MP3, Apple Lossless, FLAC, Dolby Digital, Dolby Digital Plus, Dolby Atmos",
+            "Video Formats": "HEVC, H.264"
         },
-        "Product Dimensions": {
-            "Product Height": "7.5 cm",
-            "Product Weight": "50 g",
-            "Product Width": "9 cm"
+        "Os & Processor Features": {
+            "Operating Frequency": "5G NR (Bands n1, n2, n3, n5, n7, n8, n12, n20, n25, n26, n28, n30, n38, n40, n41, n48, n53, n66, n70, n77, n78, n79), 4G FDD-LTE (B1, B2, B3, B4, B5, B7, B8, B12, B13, B17, B18, B19, B20, B25, B26, B28, B30, B32, B66), 4G TD-LTE (B34, B38, B39, B40, B41, B42, B46, B48, B53), 3G UMTS/HSPA+/DC-HSDPA (850, 900, 1700/2100, 1900, 2100 MHz), 2G GSM/EDGE (850, 900, 1800, 1900 MHz)",
+            "Operating System": "iOS 16",
+            "Processor Brand": "Apple",
+            "Processor Core": "Hexa Core",
+            "Processor Type": "A15 Bionic Chip, 6 Core Processor"
+        },
+        "Other Details": {
+            "Browser": "Safari",
+            "GPS Type": "GPS, GLONASS, GALILEO, QZSS, BEIDOU",
+            "Graphics PPI": "458 PPI",
+            "Important Apps": "App Store, Books, Calculator, Calendar, Camera, Clock, Compass, Contacts, FaceTime, Files, Find My, Health, Home, iTunes Store, Magnifier, Mail, Maps, Measure, Messages, Music, News, Notes, Phone, Photos, Podcasts, Reminders, Safari, Settings, Shortcuts, Siri, Stocks, Tips, Translate, TV, Voice Memos, Wallet, Watch, Weather",
+            "Other Features": "Rated IP68 (Maximum Depth of 6 Metres Upto 30 Minutes) Under IEC Standard 60529, 16 Core Neural Engine, Enabled by TrueDepth Camera for Facial Recognition, Emergency SOS, Crash Detection, Digital Compass, Wi-Fi, Cellular, iBeacon Micro-Location, FaceTime Video Calling Over Cellular or Wi-Fi, FaceTime HD (1080p) Video Calling Over 5G or Wi-Fi, Share Experiences Like Movies, TV, Music and Other Apps in a FaceTime Call with SharePlay, Screen Sharing, Portrait Mode in FaceTime Video, Spatial Audio, Voice Isolation and Wide Spectrum, Microphone Modes, Zoom with Rear-Facing Camera, FaceTime Audio, Voice over LTE (VoLTE), Wi-Fi Calling, Spatial Audio Playback, User Configurable Maximum Volume Limit, HDR with Dolby Vision, HDR10 and HLG Upto 4K HDR AirPlay for Mirroring, Photos and Video Out to Apple TV (2nd generation or later) or AirPlay 2 Enabled Smart TV, Video Mirroring and Video Out Support: Upto 1080p Through Lightning Digital AV Adapter and Lightning to VGA Adapter (Adapters Sold Separately), MagSafe Wireless Charging Upto 15 W, Qi Wireless Charging Upto 7.5 W, Charging via USB to Computer System or Power Adapter, Magnet Array, Voice Control, Voice Over, Zoom, Magnifier, RTT and TTY Support, Siri and Dictation, Type to Siri, Switch Control, Closed Captions, Assistive Touch, Spoken Content, Back Tap, Alignment Magnet, Accessory Identification NFC, Magnetometer, System Requirement: Apple ID (Required for Some Features), Internet Access, Syncing to a Mac or PC Requires: macOS Catalina 10.15 or Later Using the Finder, macOS El Capitan 10.11.6 Through macOS Mojave 10.14.6 Using iTunes 12.8 or Later, Windows 7 or Later Using iTunes 12.10.10 or Later (Free Download from apple.com/in/itunes/download), Rating for Hearing Aids: M3, T4",
+            "SIM Size": "Nano Sim + eSIM",
+            "Sensors": "Face ID, Barometer, High Dynamic Range Gyro, High-G Accelerometer, Proximity Sensor, Dual Ambient Light Sensors",
+            "Smartphone": "Yes",
+            "Supported Languages": "English (Australia, Canada, India, Singapore, UK, US), Chinese (Simplified, Traditional, Traditional Hong Kong), French (Canada, France), German, Italian, Japanese, Korean, Spanish (Latin America, Mexico, Spain), Arabic, Catalan, Croatian, Czech, Danish, Dutch, Finnish, Greek, Hebrew, Hindi, Hungarian, Indonesian, Malay, Norwegian, Polish, Portuguese (Brazil, Portugal), Romanian, Russian, Slovak, Swedish, Thai, Turkish, Ukrainian, Vietnamese"
+        },
+        "Warranty": {
+            "Domestic Warranty": "1 Year",
+            "Warranty Summary": "1 Year Warranty for Phone and 6 Months Warranty for In-Box Accessories"
         }
     }
 }
