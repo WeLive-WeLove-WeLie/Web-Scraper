@@ -15,10 +15,10 @@ header = {
             'Accept-Language': 'en-US,en;q=0.9'
         }
 
-# product = 'apple-iphone-13-pink-128-gb/p/itm6e30c6ee045d2'
+product = 'apple-iphone-13-pink-128-gb/p/itm6e30c6ee045d2'
 # product = 'apple-iphone-14-plus-blue-128-gb/p/itmac8385391b02b'
 # product = 'parry-s-white-label-sulphur-free-process-sugar/p/itma70eb903699cf'
-product = 'zebronics-zeb-km-2100-wired-usb-desktop-keyboard/p/itme4d7408f2405e'
+# product = 'zebronics-zeb-km-2100-wired-usb-desktop-keyboard/p/itme4d7408f2405e'
 
 product_details = {}
 reviews = []
@@ -30,7 +30,7 @@ def get_reviews_url(soup):
 def sellerscrape(soup, product_details):
     tmp = soup.find('div',string='Seller').find_next_sibling()
     cur_dict = {}
-    print(tmp.prettify())
+    # print(tmp.prettify())
     cur_seller = tmp.find('div', id='sellerName').findChild()
     cur_dict['seller_name'] = cur_seller.findChild().text.strip()
     cur_dict['seller_rating'] = cur_seller.findChild().find_next_sibling().text.strip()
@@ -42,7 +42,7 @@ def sellerscrape(soup, product_details):
         otherinfo.append(innerpoints.text.strip())
     otherinfo = otherinfo[:-1]
     cur_dict['other_info'] = otherinfo
-    print(cur_dict)
+    # print(cur_dict)
     product_details['seller'] = cur_dict
 
 def capacityscrape(soup, product_details):
@@ -106,7 +106,7 @@ def get_all_pages(num_pages):
 
     try:
         tmp = soup.find('div',string='Highlights').find_next_sibling()
-        # for each text in the highlights, add it to the list
+        # for each text in the highlights, add its to the list
         for li in tmp.find_all('li'):
             product_details['highlights'].append(li.text.strip())
     except:
@@ -145,7 +145,8 @@ def get_all_pages(num_pages):
     except:
         pass
     try:
-        capacityscrape(soup, product_details)
+        # capacityscrape(soup, product_details)
+        pass
     except:
         pass
         # break
@@ -157,43 +158,46 @@ def get_review_pages(links):
         rev_page = []
         page = requests.get(link, headers=header)
         soup = BeautifulSoup(page.content, 'lxml')
-        for li in soup.find_all('div'):
-            if li.has_attr('class') and len(li['class']) == 0:
-                rev_page.append(li.text.strip())
-        rev_page = rev_page[1:-1]
+        all_reviews = soup.find_all('div', class_='col _2wzgFH K0kLPL')
+        for rev in all_reviews:
+            data_dict = {}
+            # print(rev.prettify())
+            cur_trav = rev.findChild()
+            data_dict['rating'] = cur_trav.find('div', class_='_3LWZlK _1BLPMq').text.strip()
+            data_dict['title'] = cur_trav.find('p').text.strip()
+            cur_trav = rev.find('div', class_='t-ZTKy')
+            data_dict['review'] = cur_trav.find('div', class_='').text.strip()[:-9]
+            # print(cur_trav.prettify())
+            # print(data_dict)
+            # break
+            rev_page.append(data_dict)
+        # break
+        # print(rev_page)
+        # break
+        # rev_page = rev_page[1:-1]
         reviews.append(rev_page)
     return
 
-def get_reviews(link):
-    rev_page = []
-    page = requests.get(link, headers=header)
-    soup = BeautifulSoup(page.content, 'lxml')
-    for li in soup.find_all('div'):
-        if li.has_attr('class') and len(li['class']) == 0:
-            rev_page.append(li.text.strip())
-    rev_page = rev_page[1:-1]
-    return rev_page
 
 def main():
     links = get_all_pages(4)[1:]
     with open('./product/product_details.json', 'w') as f:
         json.dump(product_details, f, indent=4,sort_keys=True)
     print('done')
-    return
-    # get_review_pages(links)
+    # return
+    get_review_pages(links)
     # return
     # loader = AsyncHtmlLoader(links, header)
     # docs = loader.load()
     print('loaded')
+    # return
     # html2text = Html2TextTransformer()
     # soup_transformer = BeautifulSoupTransformer()
     
     # docs = html2text.transform_documents(docs)
     for i in range(0, len(links)):
-        with open(f'./product/reviews/page{i+1}.txt', 'w', encoding="utf-8") as f:
-            for line in reviews[i]:
-                f.write(line)
-                f.write('\n')
+        with open(f'./product/reviews/page{i+1}.json', 'w', encoding="utf-8") as f:
+            json.dump(reviews[i], f, indent=4,sort_keys=True)
     # for i in range(0, len(links)):
     #     with open(f'./product/langchain_rev/page{i+1}.txt', 'w', encoding="utf-8") as f:
     #         f.write(docs[i].page_content)
