@@ -15,9 +15,9 @@ header = {
             'Accept-Language': 'en-US,en;q=0.9'
         }
 
-product = 'apple-iphone-13-pink-128-gb/p/itm6e30c6ee045d2'
+# product = 'apple-iphone-13-pink-128-gb/p/itm6e30c6ee045d2'
 # product = 'apple-iphone-14-plus-blue-128-gb/p/itmac8385391b02b'
-# product = 'parry-s-white-label-sulphur-free-process-sugar/p/itma70eb903699cf'
+product = 'panasonic-convertible-7-in-1-additional-ai-mode-cooling-2023-model-1-5-ton-3-star-split-inverter-2-way-swing-pm-0-1-air-purification-filter-ac-wi-fi-connect-white/p/itm690062d929416'
 # product = 'zebronics-zeb-km-2100-wired-usb-desktop-keyboard/p/itme4d7408f2405e'
 
 product_details = {}
@@ -163,10 +163,16 @@ def get_review_pages(links):
             data_dict = {}
             # print(rev.prettify())
             cur_trav = rev.findChild()
-            data_dict['rating'] = cur_trav.find('div', class_='_3LWZlK _1BLPMq').text.strip()
+            # print(cur_trav.prettify())
+            try:
+                data_dict['rating'] = cur_trav.find('div', class_='_3LWZlK _1BLPMq').text.strip()
+            except:
+                data_dict['rating'] = cur_trav.find('div', class_='_3LWZlK _1rdVr6 _1BLPMq').text.strip()
             data_dict['title'] = cur_trav.find('p').text.strip()
             cur_trav = rev.find('div', class_='t-ZTKy')
             data_dict['review'] = cur_trav.find('div', class_='').text.strip()[:-9]
+            
+            #     pass
             # print(cur_trav.prettify())
             # print(data_dict)
             # break
@@ -185,7 +191,10 @@ def main():
         json.dump(product_details, f, indent=4,sort_keys=True)
     print('done')
     # return
+    # try:
     get_review_pages(links)
+    # except:
+    #     pass
     # return
     # loader = AsyncHtmlLoader(links, header)
     # docs = loader.load()
