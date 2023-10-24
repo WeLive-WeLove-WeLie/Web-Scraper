@@ -17,8 +17,9 @@ header = {
 
 # product = 'apple-iphone-13-pink-128-gb/p/itm6e30c6ee045d2'
 # product = 'apple-iphone-14-plus-blue-128-gb/p/itmac8385391b02b'
-product = 'panasonic-convertible-7-in-1-additional-ai-mode-cooling-2023-model-1-5-ton-3-star-split-inverter-2-way-swing-pm-0-1-air-purification-filter-ac-wi-fi-connect-white/p/itm690062d929416'
+# product = 'panasonic-convertible-7-in-1-additional-ai-mode-cooling-2023-model-1-5-ton-3-star-split-inverter-2-way-swing-pm-0-1-air-purification-filter-ac-wi-fi-connect-white/p/itm690062d929416'
 # product = 'zebronics-zeb-km-2100-wired-usb-desktop-keyboard/p/itme4d7408f2405e'
+product = 'poco-c55-cool-blue-128-gb/p/itm26aca9fd143ba'
 
 product_details = {}
 reviews = []
@@ -49,17 +50,6 @@ def capacityscrape(soup, product_details):
     tmp = soup.find('div',string='Capacity').find_next_sibling()
     cur_dict = {}
     print(tmp.prettify())
-    # cur_dict['seller_name'] = cur_seller.findChild().text.strip()
-    # cur_dict['seller_rating'] = cur_seller.findChild().find_next_sibling().text.strip()
-    # otherinfo = []
-    # for li in tmp.find_all('li'):
-    #     innerpoints = li.findChild()
-    #     # print(innerpoints.prettify())
-    #     # print(innerpoints.text.strip())
-    #     otherinfo.append(innerpoints.text.strip())
-    # cur_dict['other_info'] = otherinfo
-    # print(cur_dict)
-    # product_details['seller'] = cur_dict
 
 def get_all_pages(num_pages):
     # Goto the product page and get the HTML content of the page
@@ -167,7 +157,10 @@ def get_review_pages(links):
             try:
                 data_dict['rating'] = cur_trav.find('div', class_='_3LWZlK _1BLPMq').text.strip()
             except:
-                data_dict['rating'] = cur_trav.find('div', class_='_3LWZlK _1rdVr6 _1BLPMq').text.strip()
+                try:
+                    data_dict['rating'] = cur_trav.find('div', class_='_3LWZlK _1rdVr6 _1BLPMq').text.strip()
+                except:
+                    data_dict['rating'] = cur_trav.find('div', class_='_3LWZlK _32lA32 _1BLPMq').text.strip() # _3LWZlK _32lA32 _1BLPMq
             data_dict['title'] = cur_trav.find('p').text.strip()
             cur_trav = rev.find('div', class_='t-ZTKy')
             data_dict['review'] = cur_trav.find('div', class_='').text.strip()[:-9]
@@ -186,7 +179,8 @@ def get_review_pages(links):
 
 
 def main():
-    links = get_all_pages(4)[1:]
+    n = 4
+    links = get_all_pages(n)[1:]
     with open('./product/product_details.json', 'w') as f:
         json.dump(product_details, f, indent=4,sort_keys=True)
     print('done')
