@@ -1,172 +1,19 @@
 {
-<<<<<<< HEAD
-    "brand": 0,
-    "description": "The POCO C55 smartphone features a powerful MediaTek Helio G85 processor with 1 GHz of GPU enabling you with a smooth and hassle-free gaming experience or multitasking. It has\u00a06 GB of Turbo RAM with an expandable RAM of up to 11 GB that allows you to switch between apps quickly. This smartphone\u2019s leather-like texture with stitches on the panel gives it a classy look. The 50 MP dual camera featured in this smartphone has a night mode and HDR mode so you can capture life-like images. You can also enjoy long-lasting battery life with the 5000 mAh battery.",
-=======
-    "brand": "Panasonic",
-    "description": "With the Panasonic 1.5-ton Split Inverter Air Conditioner, you can keep cool and comfortable even during the sweltering summers. It features the user-friendly MirAie App, which is driven by AI. Also, you can adjust temperature settings for the night with this AC's customised sleep mode, offering enhanced versatility. The app further enables the creation of unique temperature profiles for weekdays and weekends. Moreover, this AC has an auto-diagnosis feature that warns users when problems are anticipated and identifies them beforehand, and the app supports one-touch service requests.",
->>>>>>> 550e69f7e5884655dfed65f2edb32d7439640257
-    "highlights": [
-        "6 GB RAM | 128 GB ROM | Expandable Upto 1 TB",
-        "17.04 cm (6.71 inch) HD+ Display",
-        "50MP Dual Rear Camera | 5MP Front Camera",
-        "5000 mAh Battery",
-        "Mediatek Helio G85 Processor"
-    ],
-<<<<<<< HEAD
-    "image": "http://rukmini1.flixcart.com/image/128/128/xif0q/mobile/y/9/g/-original-imagnfzyhh8gz8sd.jpeg?q=70",
-    "name": "POCO C55 (Cool Blue, 128 GB)",
-    "price": 0,
-=======
-    "image": "http://rukmini1.flixcart.com/image/128/128/xif0q/air-conditioner-new/q/l/z/-original-imagn9twufudm57a.jpeg?q=70",
-    "name": "Panasonic Convertible 7-in-1 with Additional AI Mode Cooling 2023 Model 1.5 Ton 3 Star Split Inverter with 2 Way Swing, PM 0.1 Air Purification Filter AC with Wi-fi Connect  - White",
-    "price": 34990,
->>>>>>> 550e69f7e5884655dfed65f2edb32d7439640257
-    "product_description": [
-        "The POCO C55 smartphone features a MediaTek Helio G85 octa-core processor with an AnTaTu score of more than 260K. The 1 GHz of GPU allows you to efficiently multitask on different apps, play games, and much more.",
-        "This smartphone enables you to switch between apps quickly and with ease, thanks to its 6 GB of Turbo RAM with an expandable RAM of up to 11 GB.",
-        "The POCO C55 smartphone has a stylish leather-like texture with stitches on the panel and curved edges to fit in your hands easily. It is also fingerprint and smudge resistant so you can enjoy your games and watch movies without worrying about fingerprints getting in the way. The fingerprint scanner featured in this smartphone gives it a bold look and adds security.",
-        "Capture life-like images with the POCO C55 smartphone\u2019s 50 MP dual camera. This camera allows you to take wider shots, thanks to the sensor with an aperture of up to F 1.8. Its night mode enables you to capture images even in low-light conditions and the HDR mode enhances the photos' details, colour, and contrast, making them more attractive.",
-        "POCO C55 smartphone\u2019s screen is about 17. 04 cm (6.71) big with an HD+ display so that you can watch your favourite movies and shows on your phone. The display featured in this smartphone allows you to view the screen even in direct sunlight. 120 Hz touch sampling rate enables the phone to register your touch and deliver commands more accurately.",
-        "The 5000 mAh battery featured in this smartphone has a long-lasting battery with about 28 days of standby time, up to 39 hours of talk time, about 27 hours of binge-watching, or up to 10.5 hours of gaming time on a single charge, so you can play, work, or do anything with your phone without worrying about draining the battery.",
-        "This smartphone is IP52-rated which makes it resistant to dust and water splashes and the oleophobic coating keeps your phone fingerprint and smudge-free, so you need not worry about cleaning the screen every time.",
-        "The POCO C55 smartphone has an in-built MIUI dialer making it more user-friendly and its dual-band WiFi support enables you with fast connectivity so you always stay connected.",
-        "Flipkart Internet Private Limited,"
-    ],
-    "rating": 4.3,
-    "review_count": 2250,
+    "brand": "GoodFeet",
+    "description": "Flipkart Internet Private Limited,",
+    "highlights": [],
+    "image": "http://rukmini1.flixcart.com/image/128/128/xif0q/shopsy-shoe/7/w/t/5-gf-01-38-good-feet-cream-original-imagjyj3rvuvnfda.jpeg?q=70",
+    "name": "GoodFeet Women Pink Wedges",
+    "price": 589,
+    "product_description": [],
+    "rating": 4,
+    "review_count": 8,
     "seller": {
         "other_info": [
-            "7 Days Service Center Replacement/Repair?",
-            "GST invoice available?"
+            "10 Days Return Policy?"
         ],
-<<<<<<< HEAD
-        "seller_name": "CLIENTEROecom",
-        "seller_rating": "4.9"
-=======
-        "seller_name": "OmniTechRetail",
-        "seller_rating": "4.3"
->>>>>>> 550e69f7e5884655dfed65f2edb32d7439640257
+        "seller_name": "GoodFeet",
+        "seller_rating": "4.7"
     },
-    "specifications": {
-        "Battery & Power Features": {
-            "Battery Capacity": "5000 mAh",
-            "Battery Type": "Lithium Polymer"
-        },
-        "Call Features": {
-            "Call Divert": "Yes",
-            "Call Records": "Yes",
-            "Call Timer": "Yes",
-            "Call Wait/Hold": "Yes",
-            "Conference Call": "Yes",
-            "Hands Free": "Yes",
-            "Phone Book": "Yes",
-            "Speaker Phone": "Yes"
-        },
-        "Camera Features": {
-            "Digital Zoom": "10X",
-            "Flash": "Rear Flash",
-            "Frame Rate": "30 fps",
-            "Full HD Recording": "Yes",
-            "HD Recording": "Yes",
-            "Image Editor": "Yes",
-            "Primary Camera": "50MP Dual Rear Camera",
-            "Primary Camera Available": "Yes",
-            "Primary Camera Features": "AI Dual Camera Setup: 50MP (f/1.8 Aperture, 1.28um (4-in-1 Super Pixel)), Camera Features: Photo Mode, 50MP Mode, Timelapse, Night Mode, Portrait Mode, Document Mode, Movie Frame, Voice Shutter, Tilt Shift, Timed Burst",
-            "Secondary Camera": "5MP Front Camera",
-            "Secondary Camera Available": "Yes",
-            "Secondary Camera Features": "5MP Front Camera: Camera Features: Portrait Mode, HDR, Front Video Recording, Palm Shutter, Voice Shutter, Movie Frame, Timelapse",
-            "Video Recording": "Yes",
-            "Video Recording Resolution": "Rear Camera: 1080p (at 30 fps), 720p (at 30 fps) | Front Camera: 1080p (at 30 fps), 720p (at 30 fps)"
-        },
-        "Connectivity Features": {
-            "3G": "Yes",
-            "Audio Jack": "3.5mm",
-            "Bluetooth Support": "Yes",
-            "Bluetooth Version": "v5.0",
-            "GPRS": "Yes",
-            "GPS Support": "Yes",
-            "Infrared": "No",
-            "Internet Connectivity": "4G, 3G, Wi-Fi, EDGE, GPRS",
-            "Map Support": "Yes",
-            "Micro USB Port": "Yes",
-            "Mini HDMI Port": "No",
-            "NFC": "No",
-            "Network Type": "4G VOLTE, 4G, 3G, 2G",
-            "Supported Networks": "4G VoLTE, 4G LTE, WCDMA, GSM",
-            "USB Connectivity": "Yes",
-            "USB Tethering": "Yes",
-            "Wi-Fi": "Yes",
-            "Wi-Fi Hotspot": "Yes",
-            "Wi-Fi Version": "Supports 2.4 GHz and 5 GHz Dual Band"
-        },
-        "Dimensions": {
-            "Depth": "8.77 mm",
-            "Height": "168.76 mm",
-            "Weight": "192 g",
-            "Width": "76.41 mm"
-        },
-        "Display Features": {
-            "Display Size": "17.04 cm (6.71 inch)",
-            "GPU": "Arm Mali-G52 MC2 (at 1 GHz)",
-            "Other Display Features": "Touch Sampling Rate: 120Hz",
-            "Resolution": "1650 x 720 Pixels",
-            "Resolution Type": "HD+"
-        },
-        "General": {
-            "Browse Type": "Smartphones",
-            "Color": "Cool Blue",
-            "Hybrid Sim Slot": "No",
-            "In The Box": "Handset, 10W Charger, Micro USB Cable, Sim Eject Tool, Quick Start Guide, Warranty Card",
-            "Model Name": "C55",
-            "Model Number": "MZB0DDTIN",
-            "OTG Compatible": "Yes",
-            "Quick Charging": "Yes",
-            "SAR Value": "SAR Limit: 1.6 W/kg, Head SAR: 0.868 W/kg, Body SAR: 0.769 W/kg",
-            "SIM Type": "Dual Sim",
-            "Touchscreen": "Yes"
-        },
-        "Memory & Storage Features": {
-            "Call Log Memory": "Yes",
-            "Expandable Storage": "1 TB",
-            "Internal Storage": "128 GB",
-            "Memory Card Slot Type": "Dedicated Slot",
-            "RAM": "6 GB",
-            "Supported Memory Card Type": "MicroSD"
-        },
-        "Multimedia Features": {
-            "FM Radio": "Yes",
-            "FM Radio Recording": "No",
-            "Music Player": "Yes"
-        },
-        "Os & Processor Features": {
-            "Operating Frequency": "2G GSM: B2/B3/B5/B8, 3G WCDMA: B1/B5/B8, 4G LTE TDD: B40/B41, 4G LTE FDD: B1/B3/B5/B8",
-            "Operating System": "Android 12",
-            "Primary Clock Speed": "2 GHz",
-            "Processor Brand": "Mediatek",
-            "Processor Core": "Octa Core",
-            "Processor Type": "Mediatek Helio G85",
-            "Secondary Clock Speed": "1.8 GHz"
-        },
-        "Other Details": {
-            "Browser": "Google Chrome",
-            "GPS Type": "GPS, AGPS, GLONASS, GALILEO, QZSS",
-            "Keypad": "No",
-            "MMS": "Yes",
-            "Other Features": "Leather-Stitch Design, Scratch Resistant Display with Oleophobic Coating, IP52 Protection, 5 GB Turbo RAM",
-            "Predictive Text Input": "Yes",
-            "Removable Battery": "No",
-            "SIM Size": "Nano Sim",
-            "SMS": "Yes",
-            "Sensors": "Accelerometer, Rear Fingerprint Sensor, Light Sensor (Software Solution), Proximity Sensor (Software Solution)",
-            "Smartphone": "Yes",
-            "User Interface": "MIUI 13 (Based on Android 12)",
-            "User Memory": "108.7",
-            "Voice Input": "Yes"
-        },
-        "Warranty": {
-            "Domestic Warranty": "1 Year",
-            "Warranty Summary": "1 Year Manufacturer Warranty for Phone and 6 Months Warranty for In the Box Accessories"
-        }
-    }
+    "specifications": {}
 }

@@ -19,7 +19,7 @@ header = {
 # product = 'apple-iphone-14-plus-blue-128-gb/p/itmac8385391b02b'
 # product = 'panasonic-convertible-7-in-1-additional-ai-mode-cooling-2023-model-1-5-ton-3-star-split-inverter-2-way-swing-pm-0-1-air-purification-filter-ac-wi-fi-connect-white/p/itm690062d929416'
 # product = 'zebronics-zeb-km-2100-wired-usb-desktop-keyboard/p/itme4d7408f2405e'
-product = 'poco-c55-cool-blue-128-gb/p/itm26aca9fd143ba'
+product = 'goodfeet-women-off-white-wedges/p/itm93309839d4e27'
 
 product_details = {}
 reviews = []
@@ -171,50 +171,84 @@ def get_all_pages(num_pages):
     # print(product_details['specifications'])
     return review_pages
 
-def get_review_pages(links):
-    for link in links:
-        rev_page = []
+def get_review_pages(links, n):
+    link = links[n]
+    # print(link)
+    rev_page = []
+    page = None
+    soup = None
+    try:
         page = requests.get(link, headers=header)
         soup = BeautifulSoup(page.content, 'lxml')
-        all_reviews = soup.find_all('div', class_='col _2wzgFH K0kLPL')
+    except:
+        return False # if page not found
+    # print(soup.title.text)
+    all_reviews = soup.find_all('div', class_='col _2wzgFH K0kLPL')
+
+    for rev in all_reviews:
+        # print("ahdjweabfuiehfnh")
+        data_dict = {}
+        # print(rev.prettify())
+        cur_trav = rev.findChild()
+        # print(cur_trav.prettify())
+        try:
+            data_dict['rating'] = cur_trav.find('div', class_='_3LWZlK _1BLPMq').text.strip()
+        except:
+            try:
+                data_dict['rating'] = cur_trav.find('div', class_='_3LWZlK _1rdVr6 _1BLPMq').text.strip()
+            except:
+                data_dict['rating'] = cur_trav.find('div', class_='_3LWZlK _32lA32 _1BLPMq').text.strip() # _3LWZlK _32lA32 _1BLPMq
+        data_dict['title'] = cur_trav.find('p').text.strip()
+        cur_trav = rev.find('div', class_='t-ZTKy')
+        data_dict['review'] = cur_trav.find('div', class_='').text.strip()[:-9]
+        # print(data_dict)
+            # pass
+        # print(cur_trav.prettify())
+        # print(data_dict)
+        # break
+        rev_page.append(data_dict)
+    
+    if(len(all_reviews) == 0):
+        all_reviews = soup.find_all('div', class_='col _2wzgFH K0kLPL _1QgsS5')
         for rev in all_reviews:
+        # print("ahdjweabfuiehfnh")
             data_dict = {}
             # print(rev.prettify())
             cur_trav = rev.findChild()
             # print(cur_trav.prettify())
             try:
-                data_dict['rating'] = cur_trav.find('div', class_='_3LWZlK _1BLPMq').text.strip()
+                data_dict['rating'] = cur_trav.find('div', class_='_3LWZlK _1BLPMq _3B8WaH').text.strip()
             except:
                 try:
-                    data_dict['rating'] = cur_trav.find('div', class_='_3LWZlK _1rdVr6 _1BLPMq').text.strip()
+                    data_dict['rating'] = cur_trav.find('div', class_='_3LWZlK _1rdVr6 _1BLPMq _3B8WaH').text.strip()
                 except:
-                    data_dict['rating'] = cur_trav.find('div', class_='_3LWZlK _32lA32 _1BLPMq').text.strip() # _3LWZlK _32lA32 _1BLPMq
-            data_dict['title'] = cur_trav.find('p').text.strip()
-            cur_trav = rev.find('div', class_='t-ZTKy')
-            data_dict['review'] = cur_trav.find('div', class_='').text.strip()[:-9]
-            
-            #     pass
-            # print(cur_trav.prettify())
-            # print(data_dict)
-            # break
+                    data_dict['rating'] = cur_trav.find('div', class_='_3LWZlK _32lA32 _1BLPMq _3B8WaH').text.strip() # _3LWZlK _32lA32 _1BLPMq
+            data_dict['title'] = rev.find('div', class_='_6K-7Co').text.strip()
+            data_dict['review'] = data_dict['title']
             rev_page.append(data_dict)
-        # break
-        # print(rev_page)
-        # break
-        # rev_page = rev_page[1:-1]
-        reviews.append(rev_page)
-    return
+
+    # break
+    # print(rev_page)
+    # break
+    # rev_page = rev_page[1:-1]
+    # print(rev_page)
+    reviews.append(rev_page)
+
+    return True
 
 
 def main():
-    n = 4
+    n = 2
     links = get_all_pages(n)[1:]
     with open('./product/product_details.json', 'w') as f:
         json.dump(product_details, f, indent=4,sort_keys=True)
     print('done')
     # return
     # try:
-    get_review_pages(links)
+    for i in range(n):
+        bool = get_review_pages(links, i)
+        if not bool:
+            break
     # except:
     #     pass
     # return
@@ -227,6 +261,8 @@ def main():
     
     # docs = html2text.transform_documents(docs)
     for i in range(0, len(links)):
+        if(reviews[i] == []):
+            break
         with open(f'./product/reviews/page{i+1}.json', 'w', encoding="utf-8") as f:
             json.dump(reviews[i], f, indent=4,sort_keys=True)
     # for i in range(0, len(links)):
