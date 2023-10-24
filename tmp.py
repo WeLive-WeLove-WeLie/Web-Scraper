@@ -51,6 +51,23 @@ def capacityscrape(soup, product_details):
     cur_dict = {}
     print(tmp.prettify())
 
+def colorscrape(soup, product_details):
+    #find the branch which has span id Color and extract the colors
+    tmp = soup.find('span', id='Color').find_parent()
+    colors = []
+    for li in tmp.find_all('li'):
+        colors.append(li.text.strip())
+    # print(colors)
+    product_details['colors'] = colors
+
+def storagescrape(soup, product_details):
+    tmp = soup.find('span', id='Storage').find_parent()
+    storage = []
+    #get the text from this branch where class is _3Oikkn _3_ezix _2KarXJ
+    for li in tmp.find_all('li'):
+        storage.append(li.text.strip())
+    product_details['storage'] = storage
+
 def get_all_pages(num_pages):
     # Goto the product page and get the HTML content of the page
     url = f'{base}/{product}'
@@ -74,13 +91,24 @@ def get_all_pages(num_pages):
     product_details['product_description'] = []
     for script in soup.find_all('script', attrs={'id': 'jsonLD'}):
         json_data  = json.loads(script.text)
+        print(json_data, json_data[0], end = "\n\n\n", sep = "\n\n")
         # print(json_data)
-        product_details['rating'] = json_data[0].get('aggregateRating', {}).get('ratingValue', 0)
-        product_details['review_count'] = json_data[0].get('aggregateRating', {}).get('reviewCount', 0)
-        product_details['brand'] = json_data[0].get('brand', {}).get('name', 0)
-        product_details['name'] = json_data[0].get('name', 0)
-        product_details['image'] = json_data[0].get('image', 0)
-        product_details['price'] = json_data[0].get('offers', {}).get('price', 0)
+        tempdict = {}
+        for tmp in json_data:
+            if(tmp.get('aggregateRating', {}).get('ratingValue', 0) != 0):
+                tempdict['rating'] = tmp.get('aggregateRating', {}).get('ratingValue', 0)
+            if(tmp.get('aggregateRating', {}).get('reviewCount', 0) != 0):
+                tempdict['review_count'] = tmp.get('aggregateRating', {}).get('reviewCount', 0)
+            if(tmp.get('brand', {}).get('name', 0) != 0):
+                tempdict['brand'] = tmp.get('brand', {}).get('name', 0)
+            if(tmp.get('name', 0) != 0):
+                tempdict['name'] = tmp.get('name', 0)
+            if(tmp.get('image', 0) != 0):
+                tempdict['image'] = tmp.get('image', 0)
+            if(tmp.get('offers', {}).get('price', 0) != 0):
+                tempdict['price'] = tmp.get('offers', {}).get('price', 0)
+        for(key, value) in tempdict.items():
+            product_details[key] = value
         break
     
     try:

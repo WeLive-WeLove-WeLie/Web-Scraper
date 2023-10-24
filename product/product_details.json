@@ -1,6 +1,11 @@
 {
+<<<<<<< HEAD
     "brand": 0,
     "description": "The POCO C55 smartphone features a powerful MediaTek Helio G85 processor with 1 GHz of GPU enabling you with a smooth and hassle-free gaming experience or multitasking. It has\u00a06 GB of Turbo RAM with an expandable RAM of up to 11 GB that allows you to switch between apps quickly. This smartphone\u2019s leather-like texture with stitches on the panel gives it a classy look. The 50 MP dual camera featured in this smartphone has a night mode and HDR mode so you can capture life-like images. You can also enjoy long-lasting battery life with the 5000 mAh battery.",
+=======
+    "brand": "Panasonic",
+    "description": "With the Panasonic 1.5-ton Split Inverter Air Conditioner, you can keep cool and comfortable even during the sweltering summers. It features the user-friendly MirAie App, which is driven by AI. Also, you can adjust temperature settings for the night with this AC's customised sleep mode, offering enhanced versatility. The app further enables the creation of unique temperature profiles for weekdays and weekends. Moreover, this AC has an auto-diagnosis feature that warns users when problems are anticipated and identifies them beforehand, and the app supports one-touch service requests.",
+>>>>>>> 550e69f7e5884655dfed65f2edb32d7439640257
     "highlights": [
         "6 GB RAM | 128 GB ROM | Expandable Upto 1 TB",
         "17.04 cm (6.71 inch) HD+ Display",
@@ -8,9 +13,15 @@
         "5000 mAh Battery",
         "Mediatek Helio G85 Processor"
     ],
+<<<<<<< HEAD
     "image": "http://rukmini1.flixcart.com/image/128/128/xif0q/mobile/y/9/g/-original-imagnfzyhh8gz8sd.jpeg?q=70",
     "name": "POCO C55 (Cool Blue, 128 GB)",
     "price": 0,
+=======
+    "image": "http://rukmini1.flixcart.com/image/128/128/xif0q/air-conditioner-new/q/l/z/-original-imagn9twufudm57a.jpeg?q=70",
+    "name": "Panasonic Convertible 7-in-1 with Additional AI Mode Cooling 2023 Model 1.5 Ton 3 Star Split Inverter with 2 Way Swing, PM 0.1 Air Purification Filter AC with Wi-fi Connect  - White",
+    "price": 34990,
+>>>>>>> 550e69f7e5884655dfed65f2edb32d7439640257
     "product_description": [
         "The POCO C55 smartphone features a MediaTek Helio G85 octa-core processor with an AnTaTu score of more than 260K. The 1 GHz of GPU allows you to efficiently multitask on different apps, play games, and much more.",
         "This smartphone enables you to switch between apps quickly and with ease, thanks to its 6 GB of Turbo RAM with an expandable RAM of up to 11 GB.",
@@ -22,15 +33,20 @@
         "The POCO C55 smartphone has an in-built MIUI dialer making it more user-friendly and its dual-band WiFi support enables you with fast connectivity so you always stay connected.",
         "Flipkart Internet Private Limited,"
     ],
-    "rating": 0,
-    "review_count": 0,
+    "rating": 4.3,
+    "review_count": 2250,
     "seller": {
         "other_info": [
             "7 Days Service Center Replacement/Repair?",
             "GST invoice available?"
         ],
+<<<<<<< HEAD
         "seller_name": "CLIENTEROecom",
         "seller_rating": "4.9"
+=======
+        "seller_name": "OmniTechRetail",
+        "seller_rating": "4.3"
+>>>>>>> 550e69f7e5884655dfed65f2edb32d7439640257
     },
     "specifications": {
         "Battery & Power Features": {
