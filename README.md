@@ -1,10 +1,12 @@
 # Web-Scraper-Repo
-Web Scraping for hack-on
-
 
 ## Installation
-langchain
-beautifulsoup4
-requests
-lxml
-html2text
+To install the required dependencies, run the following command:
+```bash
+ pip install -r requirements.txt
+```
+
+## Tech Stack
+
+* Python
+* BeautifulSoup4
